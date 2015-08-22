@@ -1,0 +1,38 @@
+<?php
+    require_once (".include/classHeader.php");
+
+    if(isset($_GET["action"]))
+    {
+        $GLOBALS["action"] = $_GET["action"];
+    }
+    else
+    {
+        $GLOBALS["action"] = "List";
+    }
+    
+    switch($GLOBALS["action"])
+    {
+    case "FileManager":
+        //header("Location: http://".$_SERVER['HTTP_HOST']."/~quixplorer");
+        break;
+    case "play video":
+        header("Location: http://".$_SERVER['HTTP_HOST']."/videoBrowser.php");
+        break;
+    case "play audio":
+        header("Location: http://".$_SERVER['HTTP_HOST']."/audio");
+        break;
+    case "show filelist":
+        header("Location: http://".$_SERVER['HTTP_HOST']."/FileMgr.php");
+        break;
+    case "show photos":
+        header("Location: http://".$_SERVER['HTTP_HOST']."/photo");
+        break;
+    case "upload file":
+        header("Location: http://".$_SERVER['HTTP_HOST']."/upload/index.htm");
+        break;
+    default:
+        //$output = exec('ls');
+        //echo "<pre>$output</pre>";
+        break;
+    }
+?>

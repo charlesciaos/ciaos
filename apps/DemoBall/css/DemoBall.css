@@ -1,0 +1,13 @@
+div#divAnimation
+{
+	position: relative;
+	background: #EE00FF;
+	left: 0px;
+	top: 0px;
+	width: 400px;
+	height: 200px;
+	z-index: 2;
+	background-color: #FFFFFF;
+	border: solid black 2px;
+	border-radius: 5px;
+}

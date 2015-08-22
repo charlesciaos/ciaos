@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>CIAOS</title>
+<link type="text/css" rel="stylesheet" href="css/common.css">
+<link type="text/css" rel="stylesheet" href="css/index.css">
+<script type="text/javascript" src="http://charlesciaos.diskstation.me/libs/GeLibs/package.js" ></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+    var Apps = {};
+    
+    console.log("=============jsonObjManifest==============");  
+    for(var AppName in jsonObjManifest)
+    { 
+       console.log("AppName: " + AppName + " => Manifest： " + jsonObjManifest[AppName].popup); 
+    }
+
+    console.log("=============jsonObjWeather============");
+    console.log(jsonObjWeather["startTime"]);
+    console.log(jsonObjWeather["endTime"]);
+    console.log(jsonObjWeather["parameter"]["parameterName"]);
+    console.log(jsonObjWeather["parameter"]["parameterValue"]);
+    
+
+    console.log("===================================");
+    var DemoLeftFrames = [];
+    DemoLeftFrames[0] = "mainmenu.html";
+    DemoLeftFrames[1] = "apps/" + "DemoChat/" + jsonObjManifest["DemoChat"].popup;
+
+    var DemoCenterFrames = [];
+    DemoCenterFrames[0] = "apps/" + "DemoPhotoBrowser/" + "DemoPhotoBrowser.html";
+    DemoCenterFrames[1] = "apps/" + "DemoBall/" + jsonObjManifest["DemoBall"].popup;
+    DemoCenterFrames[2] = "apps/" + "DemoHelloAjax/" + "DemoHelloAjax.html";
+    DemoCenterFrames[3] = "apps/" + "DemoCountdown/" + "DemoCountdown.php";
+    DemoCenterFrames[4] = "apps/" + "DemoVoiceRecognition/" + jsonObjManifest["DemoVoiceRecognition"].popup;
+
+ 
+    var DemoRightFrames = [];
+    DemoRightFrames[0] = "apps/" + "DemoTaskList/" + "DemoTaskList.html";
+    DemoRightFrames[1] = "apps/" + "DemoUpload/" + "DemoUpload.html";
+    DemoRightFrames[2] = "apps/" + "DemoRobot/" + "DemoRobot.html";
+</script>
+</head>
+
+<body>
+<noscript>
+   Your browser does not support JavaScript!!
+</noscript>
+
+<!--<div id='backgroundContainer'></div>-->
+<div id='rootContainer'>
+
+<div id='TopFrame'>CIAOS</div>
+
+<div class="bodyWrapper">
+    <div id="LeftFrame" class="appsBlock" ></div>
+    <div id="CenterFrame" class="appsBlock" ></div>
+    <div id="RightFrame" class="appsBlock" ></div>
+</div>
+
+<div id='BottomFrame'></div>
+</div>
+
+</body>
+</html>

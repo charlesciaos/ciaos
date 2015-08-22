@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+body
+{
+	height: 100%;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: white;
+    //background-image: url("../_img/background-texture.jpg");
+	//background-repeat: repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+div.bodyWrapper
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+div#divDisplay
+{
+  background-size: cover;
+  background-position: center center; 
+   background-repeat: no-repeat; 
+  position: absolute;
+  background-color: white;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  //border: solid black 1px;
+  //border-radius: 10px;
+  //padding: 5px;
+}
+
+div#divDisplayLBuffer
+{
+  background-size: cover;
+  background-position: center center; 
+   background-repeat: no-repeat; 
+  position: absolute;
+  background-color: white;
+  //background : url(../res/wallpaper/MarcPerrella.jpg);
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  //border: solid black 1px;
+  //border-radius: 10px;
+  //padding: 5px;
+}
+
+div#divDisplayRBuffer
+{
+  background-size: cover;
+  background-position: center center; 
+   background-repeat: no-repeat; 
+  position: absolute;
+  background-color: white;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  //border: solid black 1px;
+  //border-radius: 10px;
+  //padding: 5px;
+}
+
+div#divBtnPre
+{
+  position: absolute;
+  left: 0px;
+  top:0px;
+  width: 50px;
+  height: 100%;
+  z-index: 9999999999;
+}
+
+div#divBtnNext
+{
+  position: absolute;
+  left: calc(100% - 50px);
+  top:0px;
+  width: 50px;
+  height: 100%;
+  z-index: 9999999999;
+}

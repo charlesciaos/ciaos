@@ -1,0 +1,32 @@
+﻿{
+  "name": "__MSG_extName__",
+
+  "version": "1.0",
+
+  "description": "__MSG_extDescription__",
+
+  "default_locale": "zh_TW",
+
+  "icons": 
+  {
+	    "16": "images/icon_16.png",
+		"32": "images/icon_32.png",
+		"64": "images/icon_64.png",	
+		"128": "images/icon_128.png"
+  },
+
+  "background_page": "background.html",
+
+  "popup": "DemoBall.html",
+
+  "options_page": "options.html",
+
+  "permissions": [],
+
+  "browser_action": 
+  {
+	  "default_icon": "images/loading.png",
+      "default_title": "__MSG_extName__",
+      "default_popup": "DemoBall.html"
+  }
+}
