@@ -218,11 +218,11 @@ function dropHandler(event)
 window.addEventListener("load", eventWindowLoaded, false); 
 
 //Get Apps list
-var jsonTextManifest = getTextSync("apps/GeApps.php"); 
+var jsonTextManifest = getTextSync("apps/GeApps.json"); 
 var jsonObjManifest = JSON.parse(jsonTextManifest);
 
 //Get opendata
-var jsonTextWeather = getTextSync("api/opendata/gov_cwb.php"); 
+var jsonTextWeather = getTextSync("http://charlesciaos.diskstation.me/api/opendata/gov_cwb.php"); 
 var jsonObjWeather = JSON.parse(jsonTextWeather);
 
 console.log("[FLOW] index.js END");
