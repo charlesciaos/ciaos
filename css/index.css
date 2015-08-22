@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+div#backgroundContainer
+{
+//    background-color: black;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100vh;
+    height: 100vh;
+    max-width:1980px;
+    max-height:1080px;
+}
+
+div#rootContainer
+{
+//    background-color: gray;
+    position: relative;
+    margin:0px auto;
+    left: 0px;
+    top: 0px;
+    width: 1520px;
+    height: 100vh;
+    max-width:1980px;
+    max-height:1080px;
+}
+
+div.dynamicDiv
+{
+    background-color: white;
+    border: solid 1px black;
+    width: 454px;   
+    //height: 304px;
+    //width: 100%;
+    //height: 100%;
+    margin: 2px;
+}
+
+div.dragOver
+{
+	background-color: blue;
+	border: solid 2px black;
+}
+
+div.ArticalTitle
+{
+    background-color: black;
+    //border: solid 1px black;
+    width: 454px;   
+    height: 20px;
+}
+
+div.ArticalContent
+{
+    background-color: white;
+    width: 454px;   
+    height: calc(100% -  20px);
+}
+
+div#TopFrame
+{
+    position: absolute;
+    background-color: gray;
+    //background-image : url(../res/image/TopFrame_bg.jpg);
+    left: 0px;
+    top: 0px;
+    width: 1520px;
+    height: 50px;
+    //border: solid black 1px;
+}
+
+div.bodyWrapper
+{
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    height: calc(100% - 100px);
+    width: 100%;
+    max-height: calc(100% - 100px);
+}
+
+div.appsBlock
+{
+    position: absolute;
+    background-color: #DCDCDC;
+    //background-image : url(../res/image/background-texture.jpg);
+    width: 500px;
+    height: 100%;
+    //overflow: auto;
+    //border: solid black 1px;
+}
+
+div#LeftFrame
+{
+    left: 0px;
+    top: 0px;
+}
+
+div#CenterFrame
+{
+    left:510px;
+    top:0px;
+}
+
+div#RightFrame
+{
+    left: 1020px;
+    top:0px;
+}
+
+div#BottomFrame
+{
+    position: absolute;
+    background-color: gray;
+    left: 0px;
+    top: calc(100% - 50px);
+    width: 1520px;
+    height: 50px;
+       max-height:1080px;
+}
