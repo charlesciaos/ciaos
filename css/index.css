@@ -116,5 +116,5 @@ div#BottomFrame
     top: calc(100% - 50px);
     width: 1520px;
     height: 50px;
-       max-height:1080px;
+    max-height:1080px;
 }
