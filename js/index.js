@@ -2,21 +2,17 @@ console.log("[FLOW] index.js START");
 
 function dragstartHandler(event)
 {
+    console.log("dragstartHandler");
     event.dataTransfer.setData('text/plain' , event.currentTarget.id);
 }
 
 function loadFramesIntoDiv(frames, divBlock)
 {
     var divContainter = document.getElementById(divBlock);
-
-    var divContent = "";
     
-    console.log("frames.length = "+frames.length);
+    console.log("frames.length = " + frames.length);
     for(var i = 0; i < frames.length; i++)
     {
-        //var stDocument = document.implementation.createDocument("https://tw.yahoo.com/", "html", null);
-        //console.log(">>>>>>>>" + stDocument.title + "!!\n");
-
         var divTag = document.createElement("div"); 
         divTag.id = divBlock+i;
         //divTag.setAttribute("align","center");      
@@ -29,10 +25,9 @@ function loadFramesIntoDiv(frames, divBlock)
         divTagArticalTitle.className = "ArticalTitle";
 
         var divTagArticalContent = document.createElement("div");
-        divTagArticalContent.className = "ArticalContent";
-        //divTagArticalContent.innerHTML += "<iframe id='"+divBlock+"_"+i+i+"' src='"+ frames[i] +"' scrolling='no' frameborder='0' width='100%'  height='100%'></iframe>";
-            
+        divTagArticalContent.className = "ArticalContent";           
         divTagArticalContent.innerHTML += "<iframe src='"+ frames[i] +"' allowTransparency='true' width='100%' marginwidth='0' marginheight='0' scrolling='No' frameborder='0' id='"+divBlock+"_"+i+i+"'></iframe>";
+
         divTag.appendChild(divTagArticalTitle);
         divTag.appendChild(divTagArticalContent);
         divContainter.appendChild(divTag);
@@ -42,15 +37,13 @@ function loadFramesIntoDiv(frames, divBlock)
 }
 
 function SetCwinHeight(e)
-{
-    //var iframeid=document.getElementById("CenterFrame_00"); //iframe id
-   
+{  
     var iframeid= e.path[0]; //iframe id
     //console.log(e +"xx" + e.path[0]);
     if(document.getElementById)
-    {   
+    {
         if(iframeid && !window.opera)
-        {   
+        {
             if (iframeid.contentDocument && iframeid.contentDocument.body.offsetHeight)
             {
                 iframeid.height = iframeid.contentDocument.body.offsetHeight;
@@ -64,7 +57,7 @@ function SetCwinHeight(e)
             iframeid.parentElement.parentElement.style.height = (h) +"px";
         }
     }
-    
+
     //UpdateAppsFrameHeight();
 };
 
