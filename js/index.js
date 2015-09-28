@@ -1,8 +1,10 @@
-console.log("[FLOW] index.js START");
+'use strict';
+
+console.log("==== [FLOW] ==== index.js START");
 
 function dragstartHandler(event)
 {
-    console.log("dragstartHandler");
+    console.log("==== [FLOW] ==== dragstartHandler() START");
     event.dataTransfer.setData('text/plain' , event.currentTarget.id);
 }
 
@@ -58,7 +60,7 @@ function SetCwinHeight(e)
         }
     }
 
-    //UpdateAppsFrameHeight();
+    UpdateAppsFrameHeight();
 };
 
 function UpdateAppsFrameHeight()
@@ -102,34 +104,14 @@ function UpdateAppsFrameHeight()
     console.log(totalHeight);
     // set target frame the sum of child's height 
     
+    divLFrame.style.height = (totalHeight + 50) +"px";
+    divCFrame.style.height = (totalHeight + 50) +"px";
+    divRFrame.style.height = (totalHeight + 50) +"px";
+
     document.getElementById("BottomFrame").style.top = (totalHeight + 50) +"px";
 }
 
-function eventWindowLoaded()
-{
-    console.log("[FLOW] eventWindowLoaded() start");
-
-    loadFramesIntoDiv(DemoLeftFrames, "LeftFrame");
-    loadFramesIntoDiv(DemoCenterFrames, "CenterFrame");
-    loadFramesIntoDiv(DemoRightFrames, "RightFrame");
-    
-    var divDropLeftTag = document.getElementById("LeftFrame");
-    divDropLeftTag.ondragover = dragoverHandler;
-    divDropLeftTag.ondragleave = dragLeaveHandler;
-    divDropLeftTag.ondrop = dropHandler;
-
-    var divDropCenterTag = document.getElementById("CenterFrame");
-    divDropCenterTag.ondragover = dragoverHandler;
-    divDropCenterTag.ondragleave = dragLeaveHandler;
-    divDropCenterTag.ondrop = dropHandler;
-
-    var divDropRightTag = document.getElementById("RightFrame");
-    divDropRightTag.ondragover = dragoverHandler;
-    divDropRightTag.ondragleave = dragLeaveHandler;
-    divDropRightTag.ondrop = dropHandler;    
-}
-
-preColor = "white";
+var preColor = "white";
 function dragoverHandler(event)
 {
     event.preventDefault();
@@ -156,14 +138,38 @@ function dropHandler(event)
     UpdateAppsFrameHeight();
 }
 
+function eventWindowLoaded()
+{
+    console.log("==== [FLOW] ==== eventWindowLoaded() START");
+
+    loadFramesIntoDiv(DemoLeftFrames, "LeftFrame");
+    loadFramesIntoDiv(DemoCenterFrames, "CenterFrame");
+    loadFramesIntoDiv(DemoRightFrames, "RightFrame");
+    
+    var divDropLeftTag = document.getElementById("LeftFrame");
+    divDropLeftTag.ondragover = dragoverHandler;
+    divDropLeftTag.ondragleave = dragLeaveHandler;
+    divDropLeftTag.ondrop = dropHandler;
+
+    var divDropCenterTag = document.getElementById("CenterFrame");
+    divDropCenterTag.ondragover = dragoverHandler;
+    divDropCenterTag.ondragleave = dragLeaveHandler;
+    divDropCenterTag.ondrop = dropHandler;
+
+    var divDropRightTag = document.getElementById("RightFrame");
+    divDropRightTag.ondragover = dragoverHandler;
+    divDropRightTag.ondragleave = dragLeaveHandler;
+    divDropRightTag.ondrop = dropHandler;    
+}
+
 window.addEventListener("load", eventWindowLoaded, false); 
 
 //Get Apps list
-var jsonTextManifest = getTextSync("apps/GeApps.json"); 
+var jsonTextManifest = getTextSync("apps/GeApps.json");
 var jsonObjManifest = JSON.parse(jsonTextManifest);
 
 //Get opendata
-var jsonTextWeather = getTextSync("api/opendata/gov_cwb.php"); 
+var jsonTextWeather = getTextSync("http://charlesciaos.diskstation.me/api/opendata/gov_cwb.php"); 
 var jsonObjWeather = JSON.parse(jsonTextWeather);
 
-console.log("[FLOW] index.js END");
+console.log("==== [FLOW] ==== index.js END");
