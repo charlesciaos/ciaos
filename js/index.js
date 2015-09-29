@@ -36,6 +36,9 @@ function loadFramesIntoDiv(frames, divBlock)
 
         document.getElementById(divBlock+"_"+i+i).addEventListener("load", SetCwinHeight, false);
     }
+    divContainter.ondragover = dragoverHandler;
+    divContainter.ondragleave = dragLeaveHandler;
+    divContainter.ondrop = dropHandler;
 }
 
 function SetCwinHeight(e)
@@ -146,20 +149,7 @@ function eventWindowLoaded()
     loadFramesIntoDiv(DemoCenterFrames, "CenterFrame");
     loadFramesIntoDiv(DemoRightFrames, "RightFrame");
     
-    var divDropLeftTag = document.getElementById("LeftFrame");
-    divDropLeftTag.ondragover = dragoverHandler;
-    divDropLeftTag.ondragleave = dragLeaveHandler;
-    divDropLeftTag.ondrop = dropHandler;
-
-    var divDropCenterTag = document.getElementById("CenterFrame");
-    divDropCenterTag.ondragover = dragoverHandler;
-    divDropCenterTag.ondragleave = dragLeaveHandler;
-    divDropCenterTag.ondrop = dropHandler;
-
-    var divDropRightTag = document.getElementById("RightFrame");
-    divDropRightTag.ondragover = dragoverHandler;
-    divDropRightTag.ondragleave = dragLeaveHandler;
-    divDropRightTag.ondrop = dropHandler;    
+    document.getElementById("BottomFrame").innerHTML = jsonObjWeather["parameter"]["parameterName"];    
 }
 
 window.addEventListener("load", eventWindowLoaded, false); 
