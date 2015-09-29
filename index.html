@@ -8,12 +8,15 @@
 <script type="text/javascript" src="http://charlesciaos.github.io/GeLibs/package.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script>
-    var Apps = {};
-
+    var Apps = new Array();
+    var nAppCount = 0;
     console.log("=============jsonObjManifest==============");  
     for(var AppName in jsonObjManifest)
     { 
        console.log("AppName: " + AppName + " => Manifest: " + jsonObjManifest[AppName].popup);
+       Apps[nAppCount] = "apps/" + AppName + "/" + jsonObjManifest[AppName].popup;
+       console.log(Apps[nAppCount]);
+       nAppCount++;
     }
   
     var DemoLeftFrames = [];
