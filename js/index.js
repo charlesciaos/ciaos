@@ -114,29 +114,30 @@ function UpdateAppsFrameHeight()
     document.getElementById("BottomFrame").style.top = (totalHeight + 50) +"px";
 }
 
-var preColor = "white";
+var preColor = "";
 function dragoverHandler(event)
 {
     event.preventDefault();
-    console.log("aa  drag:" + preColor +" background:" + event.currentTarget);
-    preColor = event.currentTarget.style.backgroundColor;
-    console.log("bb  drag:" + preColor);
-    //event.currentTarget.style.backgroundColor= "gray";
+    console.log("dragoverHandler 1 preColor:" + preColor +" backgroundColor:" + event.currentTarget.style.backgroundColor);
+    preColor = "#DCDCDC";
+    console.log("dragoverHandler 2 preColor:" + preColor);
+    event.currentTarget.style.backgroundColor= "#66cdaa";
     //event.currentTarget.setAttribute("class", "div.dragOver");
 }
 
 function dragLeaveHandler(event)
 {
-    event.currentTarget.style.backgroundColor= "white";
+    console.log("dragLeaveHandler preColor:" + preColor);
+    event.currentTarget.style.backgroundColor= preColor;
 }
 
 function dropHandler(event)
 {   
+    console.log("dropHandler preColor:" + preColor);
     var did = event.dataTransfer.getData('text/plain');
     var d = document.getElementById(did);
     event.currentTarget.appendChild(d);
-    console.log("cc drop:" + preColor);
-    event.currentTarget.style.backgroundColor= "white";
+    event.currentTarget.style.backgroundColor= preColor;
     
     UpdateAppsFrameHeight();
 }
