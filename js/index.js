@@ -156,7 +156,7 @@ function eventWindowLoaded()
 window.addEventListener("load", eventWindowLoaded, false); 
 
 //Get Apps list
-var jsonTextManifest = getTextSync("apps/GeApps.json");
+var jsonTextManifest = getTextSync("http://charlesciaos.diskstation.me/apps/GeApps.php");
 var jsonObjManifest = JSON.parse(jsonTextManifest);
 
 //Get opendata
