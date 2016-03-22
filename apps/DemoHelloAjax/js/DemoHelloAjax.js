@@ -1,4 +1,4 @@
-var ServerURL = "http://charlesciaos.diskstation.me/api/response.php";
+var ServerURL = "http://charlesciaos.diskstation.me/api/GeService/response.php";
 
 // retrieves the XMLHttpRequest object
 function createXmlHttpRequestObject() 
