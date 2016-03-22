@@ -14,27 +14,27 @@
     for(var AppName in jsonObjManifest)
     { 
        console.log("AppName: " + AppName + " => Manifest: " + jsonObjManifest[AppName].popup);
-       Apps[nAppCount] = "apps/" + AppName + "/" + jsonObjManifest[AppName].popup;
+       Apps[nAppCount] = "Ge-apps/" + AppName + "/" + jsonObjManifest[AppName].popup;
        console.log(Apps[nAppCount]);
        nAppCount++;
     }
-    console.log("============= total apps " +  nAppCount + " ================");  
+    console.log("============= total Ge-apps " +  nAppCount + " ================");  
   
     var DemoLeftFrames = [];
-    DemoLeftFrames[0] = "apps/" + jsonObjManifest["GeMainmenu"].name + "/" + jsonObjManifest["GeMainmenu"].popup;
-    DemoLeftFrames[1] = "apps/" + jsonObjManifest["DemoChat"].name + "/" + jsonObjManifest["DemoChat"].popup;
+    DemoLeftFrames[0] = "Ge-apps/" + jsonObjManifest["GeMainmenu"].name + "/" + jsonObjManifest["GeMainmenu"].popup;
+    DemoLeftFrames[1] = "Ge-apps/" + jsonObjManifest["DemoChat"].name + "/" + jsonObjManifest["DemoChat"].popup;
 
     var DemoCenterFrames = [];
-    DemoCenterFrames[0] = "apps/" + "DemoPhotoBrowser/" + "DemoPhotoBrowser.html";
-    DemoCenterFrames[1] = "apps/" + "DemoBall/" + jsonObjManifest["DemoBall"].popup;
-    DemoCenterFrames[2] = "apps/" + "DemoHelloAjax/" + "DemoHelloAjax.html";
-    DemoCenterFrames[3] = "apps/" + "DemoCountdown/" + "DemoCountdown.html";
-    DemoCenterFrames[4] = "apps/" + "DemoVoiceRecognition/" + jsonObjManifest["DemoVoiceRecognition"].popup;
+    DemoCenterFrames[0] = "Ge-apps/" + "DemoPhotoBrowser/" + "DemoPhotoBrowser.html";
+    DemoCenterFrames[1] = "Ge-apps/" + "DemoBall/" + jsonObjManifest["DemoBall"].popup;
+    DemoCenterFrames[2] = "Ge-apps/" + "DemoHelloAjax/" + "DemoHelloAjax.html";
+    DemoCenterFrames[3] = "Ge-apps/" + "DemoCountdown/" + "DemoCountdown.html";
+    DemoCenterFrames[4] = "Ge-apps/" + "DemoVoiceRecognition/" + jsonObjManifest["DemoVoiceRecognition"].popup;
 
     var DemoRightFrames = [];
-    DemoRightFrames[0] = "apps/" + "DemoTaskList/" + "DemoTaskList.html";
-    DemoRightFrames[1] = "apps/" + "DemoUpload/" + "DemoUpload.html";
-    DemoRightFrames[2] = "apps/" + "DemoRobot/" + "DemoRobot.html";
+    DemoRightFrames[0] = "Ge-apps/" + "DemoTaskList/" + "DemoTaskList.html";
+    DemoRightFrames[1] = "Ge-apps/" + "DemoUpload/" + "DemoUpload.html";
+    DemoRightFrames[2] = "Ge-apps/" + "DemoRobot/" + "DemoRobot.html";
 
     if(jsonObjWeather != null)
     {
