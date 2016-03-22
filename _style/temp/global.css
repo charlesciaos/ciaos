@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+body
+{
+	height: 100%;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: white;
+    //background-image: url("../_img/background-texture.jpg");
+	//background-repeat: repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}

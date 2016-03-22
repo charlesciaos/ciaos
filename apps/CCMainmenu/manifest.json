@@ -15,7 +15,7 @@
 		"128": "images/icon_128.png"
   },
 
-  "popup": "CCMainmenu.html",
+  "popup": "index.html",
 
   "permissions": ["contextMenus",
      "tabs",
@@ -28,7 +28,7 @@
   {
 	  "default_icon": "images/icon_32.png",
       "default_title": "CCMainmenu",
-      "default_popup": "CCMainmenu.html"
+      "default_popup": "index.html"
   },
 
   "content_security_policy": "script-src 'self'; object-src 'self'"

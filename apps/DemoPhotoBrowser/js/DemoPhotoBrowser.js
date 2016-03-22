@@ -1,5 +1,5 @@
-var ServerURL = "http://charlesciaos.diskstation.me/api/DemoPhotoBrowserJSON.php";
-var RootURL = "http://charlesciaos.diskstation.me";
+var ServerURL = "http://charlesciaos.diskstation.me/api/GeService/DemoPhotoBrowser/DemoPhotoBrowserJSON.php";
+var RootURL = "http://charlesciaos.diskstation.me/";
 
 var bg;
 function resizeTo()
@@ -57,7 +57,7 @@ function onLoadInit()
     var i =0
     for(i = 0; i< photoList.photo.length; i++)
     {
-        imgSrcs[i] = RootURL + photoList.photo[i].photoPath.substr(2);
+        imgSrcs[i] = RootURL + photoList.photo[i].photoPath;
     }
     console.log(imgSrcs);
 

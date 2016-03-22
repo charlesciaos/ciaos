@@ -1,4 +1,4 @@
-var ServerUrl="http://charlesciaos.diskstation.me/api/";
+var ServerUrl="http://charlesciaos.diskstation.me/api/GeService/get_tasklist.php";
 
 // holds an instance of XMLHttpRequest
 var xmlHttp = createXmlHttpRequestObject();
@@ -65,7 +65,7 @@ function displayError($message)
 // Scriptaculous-specific code to define a sortable list and a drop zone
 function startup()
 {
-    var tasklist = getTextSync(ServerUrl+"get_tasklist.php");
+    var tasklist = getTextSync(ServerUrl);
     console.log("tasklist: "+tasklist);
     document.getElementById("tasksList").innerHTML = tasklist;
 

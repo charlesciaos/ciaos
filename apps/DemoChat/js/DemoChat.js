@@ -1,7 +1,7 @@
 /* chatURL - URL for updating chat messages */
-var chatURL = "http://charlesciaos.diskstation.me/api/chat.php";
+var chatURL = "http://charlesciaos.diskstation.me/api/GeService/chat.php";
 /* getColorURL - URL for retrieving the chosen RGB color */
-var getColorURL = "http://charlesciaos.diskstation.me/api/get_color.php";
+var getColorURL = "http://charlesciaos.diskstation.me/api/GeService/get_color.php";
 
 /* create XMLHttpRequest objects for updating the chat messages and getting the selected color */
 var xmlHttpGetMessages = createXmlHttpRequestObject();

@@ -160,7 +160,7 @@ var jsonTextManifest = getTextSync("http://charlesciaos.diskstation.me/apps/GeAp
 var jsonObjManifest = JSON.parse(jsonTextManifest);
 
 //Get opendata
-var jsonTextWeather = getTextSync("http://charlesciaos.diskstation.me/api/opendata/gov_cwb.php"); 
+var jsonTextWeather = getTextSync("http://charlesciaos.diskstation.me/api/GeService/opendata/gov_cwb.php"); 
 var jsonObjWeather = JSON.parse(jsonTextWeather);
 
 console.log("==== [FLOW] ==== index.js END");
