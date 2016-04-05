@@ -2,7 +2,7 @@ function RPi_getRPiStatus(callback)
 {
     var eventObj = new Object();
     // set the flag that specifies we're deleting the messages
-    eventObj.path = "http://charlesciaos.diskstation.me/api/GeService/webiopi_RESTAPI.php";
+    eventObj.path = "http://charlesciaos.diskstation.me/api/GeService/RpiControl.php";
     eventObj.params = null;
     eventObj.callback = callback;
     // add the message to the queue
@@ -26,18 +26,6 @@ function RPi_EnableCameraMonitor(mode)
     // set the flag that specifies we're deleting the messages
     eventObj.path = "http://charlesciaos.diskstation.me/api/GeService/RpiControl.php";
     eventObj.params = "device=camera&mode="+mode;
-    eventObj.callback = null;
-    // add the message to the queue
-    MessageQueue.push(eventObj);
-}
-
-
-function RPi_takePicture()
-{
-    var eventObj = new Object();
-    // set the flag that specifies we're deleting the messages
-    eventObj.path = "http://charlesciaos.diskstation.me/api/GeService/sendSshCommand.php";
-    eventObj.params = "";
     eventObj.callback = null;
     // add the message to the queue
     MessageQueue.push(eventObj);
