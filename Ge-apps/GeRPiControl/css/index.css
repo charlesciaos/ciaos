@@ -16,9 +16,8 @@ body
 
 div#divBtnOn, div#divBtnOff
 {
-  position: relative;
-  //left: 0px;
-  //top:0px;
+  position: absolute;
+  top:0px;
   width: 100px;
   height: 50px;
   z-index: 9999999999;
@@ -27,11 +26,47 @@ div#divBtnOn, div#divBtnOff
 
 div#divBtnUp, div#divBtnDown, div#divBtnLeft, div#divBtnRight
 {
-  position: relative;
-  //left: 0px;
-  //top:0px;
+  position: absolute;
+  top:0px;
   width: 100px;
   height: 50px;
   z-index: 9999999999;
   background-color: yellow;
+}
+
+div#divBtnOn
+{
+    left: 0px;
+}
+
+div#divBtnOff
+{
+    left: 100px;
+}
+
+div#divBtnUp
+{
+    left: 200px;
+}
+div#divBtnDown
+{
+    left: 300px;
+}
+div#divBtnLeft
+{
+    left: 400px;
+}
+div#divBtnRight
+{
+    left: 500px;
+}
+
+
+#liveWebcam
+{
+  position: absolute;
+  top:50px;
+}
+    
+    
 }
