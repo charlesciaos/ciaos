@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+body
+{
+	height: 100%;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: white;
+    //background-image: url("../_img/background-texture.jpg");
+	//background-repeat: repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+div#divBtnOn, div#divBtnOff
+{
+  position: relative;
+  //left: 0px;
+  //top:0px;
+  width: 100px;
+  height: 50px;
+  z-index: 9999999999;
+  background-color: red;
+}
+
+div#divBtnUp, div#divBtnDown, div#divBtnLeft, div#divBtnRight
+{
+  position: relative;
+  //left: 0px;
+  //top:0px;
+  width: 100px;
+  height: 50px;
+  z-index: 9999999999;
+  background-color: yellow;
+}
