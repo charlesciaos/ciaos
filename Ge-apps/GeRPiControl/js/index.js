@@ -55,7 +55,7 @@ function init()
         
         setTimeout(function(){
             document.getElementById('liveWebcam').innerHTML = location.reload();
-            }, 2000);
+            }, 3000);
         
     }
     document.getElementById("divBtnOff").onclick = function()
