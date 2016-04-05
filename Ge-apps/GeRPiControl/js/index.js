@@ -52,6 +52,11 @@ function init()
     {
         console.log(this+"onclick");
         RPi_EnableCameraMonitor("on");
+        
+        setTimeout(function(){
+            document.getElementById('liveWebcam').innerHTML = location.reload();
+            }, 2000);
+        
     }
     document.getElementById("divBtnOff").onclick = function()
     {
