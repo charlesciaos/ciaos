@@ -14,7 +14,7 @@ body
     overflow: hidden;
 }
 
-div#divBtnOn, div#divBtnOff
+#divBtnOn, #divBtnOff
 {
   position: absolute;
   top:0px;
@@ -24,39 +24,39 @@ div#divBtnOn, div#divBtnOff
   background-color: red;
 }
 
-div#divBtnUp, div#divBtnDown, div#divBtnLeft, div#divBtnRight
+#divBtnUp, #divBtnDown, #divBtnLeft, #divBtnRight
 {
   position: absolute;
   top:0px;
   width: 100px;
   height: 50px;
   z-index: 9999999999;
-  background-color: yellow;
+  background-color: white;
 }
 
-div#divBtnOn
+#divBtnOn
 {
     left: 0px;
 }
 
-div#divBtnOff
+#divBtnOff
 {
     left: 100px;
 }
 
-div#divBtnUp
+#divBtnUp
 {
     left: 200px;
 }
-div#divBtnDown
+#divBtnDown
 {
     left: 300px;
 }
-div#divBtnLeft
+#divBtnLeft
 {
     left: 400px;
 }
-div#divBtnRight
+#divBtnRight
 {
     left: 500px;
 }
