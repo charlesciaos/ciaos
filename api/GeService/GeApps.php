@@ -1,4 +1,6 @@
 <?php
+	require_once (".include/classHeader.php");
+    require_once (".include/init.php");
 
     function removeBOM($str = '')
     {
@@ -19,7 +21,7 @@
         $dirHandler = dir($strFolderPath);
 
         $jsonManifest = "{";
-        while($entry = $dirHandler->read())
+        while(false !== ($entry = $dirHandler->read()))
         {
             if('.' == $entry || '..' == $entry)
             {
@@ -56,13 +58,18 @@
 
     // Clear the output
     if(ob_get_length()) ob_clean();
+
     // Headers are sent to prevent browsers from caching
     header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); 
     header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . 'GMT'); 
     header('Cache-Control: no-cache, must-revalidate');
     header('Pragma: no-cache');
-    header("Access-Control-Allow-Origin: *");
+    if (true == $GLOBALS["require_Access_Control_Allow_all"])
+    {
+        header("Access-Control-Allow-Origin: *");
+    }
     //header('Content-Type: text/xml');    
 
-    echo showJSONList(".");
+    //echo showJSONList("../../Ge-apps/");
+    echo showJSONList("/volume1/web/Ge-apps");
 ?>
