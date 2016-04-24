@@ -162,7 +162,7 @@ function processContent(content, action)
         }
         else
         {
-            setTimeout(processContent, 1000);  
+            setTimeout("processContent()", 1000);  
         }
     }
     // display the error in case of failure
