@@ -17,7 +17,7 @@
 
   "background_page": "background.html",
 
-  "popup": "DemoBall.html",
+  "popup": "index.html",
 
   "options_page": "options.html",
 
@@ -27,6 +27,6 @@
   {
 	  "default_icon": "images/loading.png",
       "default_title": "__MSG_extName__",
-      "default_popup": "DemoBall.html"
+      "default_popup": "index.html"
   }
 }
