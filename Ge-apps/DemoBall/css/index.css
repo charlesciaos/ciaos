@@ -1,9 +1,9 @@
 div#divAnimation
 {
-	position: relative;
+	position: float left;
 	background: #EE00FF;
-	left: 0px;
-	top: 0px;
+	//left: 0px;
+	//top: 0px;
 	width: 400px;
 	height: 200px;
 	z-index: 2;
