@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>MstarMantisReport</title>
+<link type="text/css" rel="stylesheet" href="css/index.css">
+<script type="text/javascript" src="http://charlesciaos.diskstation.me/api/GeLibs/package.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+<noscript>
+   Your browser does not support JavaScript!!
+</noscript>
+
+
+
+<div id='divRoot'>
+    <div id='divTitle'>Mantis Report Generator </div><br>
+    <input type='text' id='username' size='40' maxlength='300' /> ==> 輸入mantis 帳號<br>
+    <input type='password' id='password' size='40' maxlength='300' /> ==> 輸入mantis 密碼<br>
+    <input type='text' id='project_name' size='40' maxlength='300' value='C_TPV_LG_EU_SN_Milan'/> ==> 輸入project名稱(可用','分開)<br>
+    <input type='text' id='work_id' size='40' maxlength='300' value='0000'/> ==> 輸入mstar工號<br>
+    <input type='text' id='department' size='40' maxlength='300' value='二課'/> ==> 輸入課級<br>
+    <input type='text' id='mail_title' size='40' maxlength='300' value='Daily Report [charles.juan]'/> ==> 輸入mail主旨<br>
+    <input type='text' id='mail_loop' size='40' maxlength='300' value='eddie.chen@mstarsemi.com'/> ==> 輸入mail loop<br>
+    <input type='text' id='mail_cc' size='40' maxlength='300' value='ivan-hc.chen@mstarsemi.com;eason.chiang@mstarsemi.com;jerry-hy.liu@mstarsemi.com'/> ==> 輸入mail cc<br>
+    <input type='text' id='mail_content_header' size='40' maxlength='300' value='Dear Sirs:'/> ==> 輸入mail內容開頭<br>
+    <input type='button' id='btnSetConfig' value='Set Config' />
+    <input type='button' id='btnGenReport' value='Gen Report' /><br>
+    <br>
+    <div id='divResponseMsg'>
+    <b>User Guide</b><br>
+    1. 請先將以上資訊填妥, 接著按下Set Config完成個人設定<br>
+    2. 接著確認輸入正確帳號密碼, 按下Gen Report來產生report excel檔<br>
+    </div>
+</div>
+<div id='divWaittingDialog'>
+    <div id='mask'></div>
+    <div id='dialog'>Please Wait...</div>
+</div>
+
+</body>
+</html>
