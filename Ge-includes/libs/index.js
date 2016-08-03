@@ -163,4 +163,41 @@ var jsonObjManifest = JSON.parse(jsonTextManifest);
 var jsonTextWeather = getTextSync("http://charlesciaos.diskstation.me/api/GeService/opendata/gov_cwb.php"); 
 var jsonObjWeather = JSON.parse(jsonTextWeather);
 
+var Apps = new Array();
+var nAppCount = 0;
+console.log("=============jsonObjManifest==============");  
+for(var AppName in jsonObjManifest)
+{ 
+   console.log("AppName: " + AppName + " => Manifest: " + jsonObjManifest[AppName].popup);
+   Apps[nAppCount] = "Ge-apps/" + AppName + "/" + jsonObjManifest[AppName].popup;
+   console.log(Apps[nAppCount]);
+   nAppCount++;
+}
+console.log("============= total Ge-apps " +  nAppCount + " ================");  
+
+var DemoLeftFrames = [];
+DemoLeftFrames[0] = "Ge-apps/" + jsonObjManifest["GeMainmenu"].name + "/" + jsonObjManifest["GeMainmenu"].popup;
+DemoLeftFrames[1] = "Ge-apps/" + jsonObjManifest["DemoChat"].name + "/" + jsonObjManifest["DemoChat"].popup;
+
+var DemoCenterFrames = [];
+DemoCenterFrames[0] = "Ge-apps/" + "DemoPhotoBrowser/" + "DemoPhotoBrowser.html";
+DemoCenterFrames[1] = "Ge-apps/" + "DemoBall/" + jsonObjManifest["DemoBall"].popup;
+DemoCenterFrames[2] = "Ge-apps/" + "DemoHelloAjax/" + "index.html";
+DemoCenterFrames[3] = "Ge-apps/" + "DemoCountdown/" + "DemoCountdown.html";
+DemoCenterFrames[4] = "Ge-apps/" + "DemoVoiceRecognition/" + jsonObjManifest["DemoVoiceRecognition"].popup;
+
+var DemoRightFrames = [];
+DemoRightFrames[0] = "Ge-apps/" + "DemoTaskList/" + "DemoTaskList.html";
+DemoRightFrames[1] = "Ge-apps/" + "DemoUpload/" + "DemoUpload.html";
+DemoRightFrames[2] = "Ge-apps/" + "DemoRobot/" + "DemoRobot.html";
+
+if(jsonObjWeather != null)
+{
+    console.log("=============jsonObjWeather============");
+    console.log(jsonObjWeather["startTime"]);
+    console.log(jsonObjWeather["endTime"]);
+    console.log(jsonObjWeather["parameter"]["parameterName"]);
+    console.log(jsonObjWeather["parameter"]["parameterValue"]);
+}
+
 console.log("==== [FLOW] ==== index.js END");

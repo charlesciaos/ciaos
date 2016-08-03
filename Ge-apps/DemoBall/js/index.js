@@ -24,8 +24,10 @@ var g = 0; //Gravity
 
 var box;
 
+var oBall;
+
 function eventWinodwLoaded()
-{   
+{
     var c = document.getElementById("GravityField");
     box = c.getContext("2d");
     box.fillStyle="#FF0000";
@@ -36,7 +38,12 @@ function eventWinodwLoaded()
     vy = 0;
     ay = 0;
     ax = 0;
-    
+
+    oBall = new GeShape(1);
+
+
+    console.log(oBall);
+
     initGravityField();
 
     setInterval(loop, INTERVALTIME); //in milliseconds
@@ -62,12 +69,15 @@ function loop()
     var nowTime = new Date().getTime();
     var dt = (nowTime - lastTime) / 1000;
 
+
+    oBall.draw();
+
     setAccessory(0, g); //set Gravity
     
     y += vy*dt + 0.5*ay*dt*dt;  
     x += vx*dt + 0.5*ax*dt*dt;
 
-    console.log("x=" + x + ", y=" + y + ", ax=" + ax + ", ay=" + ay + ", dt=" + dt);    
+    //console.log("x=" + x + ", y=" + y + ", ax=" + ax + ", ay=" + ay + ", dt=" + dt);    
     
     vx = vx + ax*dt;
     vy = vy + ay*dt;

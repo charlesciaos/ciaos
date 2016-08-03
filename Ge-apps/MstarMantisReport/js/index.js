@@ -11,6 +11,20 @@ function setConfig(params)
     MessageQueue.push(eventObj);
 }
 
+function getConfig(params)
+{
+    document.getElementById('divWaittingDialog').style.visibility = 'visible';
+    
+    var eventObj = new Object();
+    // set the flag that specifies we're deleting the messages
+    eventObj.path = 'http://charlesciaos.diskstation.me:8280/api/GeService/genMantisConfig.php';
+    eventObj.params = params + '&ACTION=load';
+    eventObj.callback = cbGetConfig;
+    // add the message to the queue
+    MessageQueue.push(eventObj);
+}
+
+
 function genReport(params)
 {
     document.getElementById('divWaittingDialog').style.visibility = 'visible';
@@ -45,6 +59,77 @@ function cbSetConfig()
     }
     
 }
+
+function cbGetConfig()
+{
+    console.log("cbGetConfig");
+    
+    // continue if the process is completed
+    if(xmlHttpGetMessages.readyState == 4) 
+    {
+        // continue only if HTTP status is "OK"
+        if(xmlHttpGetMessages.status == 200) 
+        {
+            var result = xmlHttpGetMessages.responseText;
+            
+            console.log(result);
+            
+            var jsonObjConfig = JSON.parse(result);
+            
+            var iUsername = document.getElementById('username');
+            var iPassword = document.getElementById('password');
+            var iProjectName = document.getElementById('project_name');
+            var iWorkId = document.getElementById('work_id');
+            var iDepartment = document.getElementById('department');
+            var iMailTitle = document.getElementById('mail_title');
+            var iMailLoop = document.getElementById('mail_loop');
+            var iMailCC = document.getElementById('mail_cc');
+            var iMailContentHeader = document.getElementById('mail_content_header');
+            
+            
+            for(var key in jsonObjConfig)
+            { 
+                console.log("key: " + key + " => value: " + jsonObjConfig[key]);
+                
+                switch(key)
+                {
+                case 'USERNAME':
+                    iUsername.value = jsonObjConfig[key];
+                    break;
+                case 'PASSWORD':
+                    iPassword.value = jsonObjConfig[key];
+                    break;
+                case 'PROJECT_NAME':
+                    iProjectName.value = jsonObjConfig[key];
+                    break;
+                case 'MSTAR_WORK_ID':
+                    iWorkId.value = jsonObjConfig[key];
+                    break;
+                case 'MSTAR_DEPARTMENT':
+                    iDepartment.value = jsonObjConfig[key];
+                    break;
+                case 'MSTAR_MAIL_TITLE':
+                    iMailTitle.value = jsonObjConfig[key];
+                    break;
+                case 'MSTAR_MAIL_LOOP':
+                    iMailLoop.value = jsonObjConfig[key];
+                    break;
+                case 'MSTAR_MAIL_CC':
+                    iMailCC.value = jsonObjConfig[key];
+                    break;
+                case 'MSTAR_MAIL_CONTENT_HEADER':
+                    iMailContentHeader.value = jsonObjConfig[key];
+                    break;
+                }
+            }
+            
+            document.getElementById('divWaittingDialog').style.visibility = 'hidden';
+            
+        }
+    }
+    
+}
+
 
 function cbGenReport()
 {
@@ -157,7 +242,7 @@ function init()
             alert('please input username and password');
         }
     }
-    document.getElementById("btnGenReport").onclick = function()
+    document.getElementById("btnGetConfig").onclick = function()
     {
         console.log(this+"onclick");
         
@@ -173,11 +258,31 @@ function init()
         
         if(iUsername && iPassword)
         {
-            genReport(params);
+            getConfig(params);
         }
         else
         {
             alert('please input username and password');
+        }
+    }    
+    
+    document.getElementById("btnGenReport").onclick = function()
+    {
+        console.log(this+"onclick");
+        
+        params='';
+        if(iUsername)
+        {
+            params += 'USERNAME=' + encodeURIComponent(iUsername.value);
+        }
+
+        if(iUsername)
+        {
+            genReport(params);
+        }
+        else
+        {
+            alert('please check username');
         }
     }
 }
