@@ -8,6 +8,13 @@ function dragstartHandler(event)
     event.dataTransfer.setData('text/plain' , event.currentTarget.id);
 }
 
+function dblclickHandler(event)
+{
+    console.log("==== [FLOW] ==== doubleclickHandler() START");
+    console.log(this.getAttribute("data-url"));
+    window.open(this.getAttribute("data-url"), "_blank");
+}
+
 function loadFramesIntoDiv(frames, divBlock)
 {
     var divContainter = document.getElementById(divBlock);
@@ -25,6 +32,8 @@ function loadFramesIntoDiv(frames, divBlock)
         //artical
         var divTagArticalTitle = document.createElement("div");
         divTagArticalTitle.className = "ArticalTitle";
+        divTagArticalTitle.ondblclick = dblclickHandler;
+        divTagArticalTitle.setAttribute("data-url", frames[i]);
 
         var divTagArticalContent = document.createElement("div");
         divTagArticalContent.className = "ArticalContent";           
@@ -145,23 +154,22 @@ function dropHandler(event)
 function eventWindowLoaded()
 {
     console.log("==== [FLOW] ==== eventWindowLoaded() START");
-
     loadFramesIntoDiv(DemoLeftFrames, "LeftFrame");
     loadFramesIntoDiv(DemoCenterFrames, "CenterFrame");
     loadFramesIntoDiv(DemoRightFrames, "RightFrame");
-    
     document.getElementById("BottomFrame").innerHTML = jsonObjWeather["parameter"]["parameterName"];    
 }
 
 window.addEventListener("load", eventWindowLoaded, false); 
 
 //Get Apps list
+//var jsonTextManifest = getTextSync("https://charlesciaos.diskstation.me:8043/api/GeService/GeApps.php");
 var jsonTextManifest = getTextSync("http://charlesciaos.diskstation.me/api/GeService/GeApps.php");
 var jsonObjManifest = JSON.parse(jsonTextManifest);
 
 //Get opendata
-var jsonTextWeather = getTextSync("http://charlesciaos.diskstation.me/api/GeService/opendata/gov_cwb.php"); 
-var jsonObjWeather = JSON.parse(jsonTextWeather);
+//var jsonTextWeather = getTextSync("https://charlesciaos.diskstation.me:8043/api/GeService/opendata/gov_cwb.php"); 
+//var jsonObjWeather = JSON.parse(jsonTextWeather);
 
 var Apps = new Array();
 var nAppCount = 0;

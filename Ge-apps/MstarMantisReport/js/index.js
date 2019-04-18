@@ -1,10 +1,12 @@
+BASESERVER = 'http://charlesciaos.diskstation.me:8280/';
+
 function setConfig(params)
 {
     document.getElementById('divWaittingDialog').style.visibility = 'visible';
     
     var eventObj = new Object();
     // set the flag that specifies we're deleting the messages
-    eventObj.path = 'http://charlesciaos.diskstation.me:8280/api/GeService/genMantisConfig.php';
+    eventObj.path = BASESERVER + 'api/GeService/genMantisConfig.php';
     eventObj.params = params;
     eventObj.callback = cbSetConfig;
     // add the message to the queue
@@ -17,7 +19,7 @@ function getConfig(params)
     
     var eventObj = new Object();
     // set the flag that specifies we're deleting the messages
-    eventObj.path = 'http://charlesciaos.diskstation.me:8280/api/GeService/genMantisConfig.php';
+    eventObj.path = BASESERVER + 'api/GeService/genMantisConfig.php';
     eventObj.params = params + '&ACTION=load';
     eventObj.callback = cbGetConfig;
     // add the message to the queue
@@ -31,7 +33,7 @@ function genReport(params)
     
     var eventObj = new Object();
     // set the flag that specifies we're deleting the messages
-    eventObj.path = 'http://charlesciaos.diskstation.me:8280/api/GeService/genMantisReport.php';
+    eventObj.path = BASESERVER + 'api/GeService/genMantisReport.php';
     eventObj.params = params;
     eventObj.callback = cbGenReport;
     // add the message to the queue
@@ -159,7 +161,7 @@ function cbGenReport()
             {
                 var uri = xmlDocumentElement.getElementsByTagName("uri")[0].firstChild.data;
                 
-                var link = 'http://charlesciaos.diskstation.me:8280/' + uri;
+                var link = BASESERVER + uri;
                 
                 msg += 'Done, please downlaod daily report from below link address\n';
                 msg += '<a href="'+ link+ '">' + link + '</a>'
